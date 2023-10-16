@@ -16,24 +16,60 @@ class WidgetTresRatllaPainter extends CustomPainter {
       ..strokeWidth = 5.0;
 
     // Definim els punts on es creuaran les línies verticals
-    final double firstVertical = size.width / 3;
-    final double secondVertical = 2 * size.width / 3;
+    final double firstVertical = size.width / 10;
+    final double secondVertical = 2 * size.width / 10;
+    final double trindVertical = 3 * size.width / 10;
+    final double fourVertical = 4 * size.width / 10;
+    final double fiveVertical = 5 * size.width / 10;
+    final double sixVertical = 6 * size.width / 10;
+    final double sevenVertical = 7 * size.width / 10;
+    final double eightVertical = 8 * size.width / 10;
+    final double nineVertical = 9 * size.width / 10;
 
+    List<double> listavertical = [
+      firstVertical,
+      secondVertical,
+      trindVertical,
+      fourVertical,
+      fiveVertical,
+      sixVertical,
+      sevenVertical,
+      eightVertical,
+      nineVertical,
+    ];
     // Dibuixem les línies verticals
-    canvas.drawLine(
-        Offset(firstVertical, 0), Offset(firstVertical, size.height), paint);
-    canvas.drawLine(
-        Offset(secondVertical, 0), Offset(secondVertical, size.height), paint);
+
+    for (int i = 0; i < listavertical.length; i++) {
+      double numero = listavertical[i];
+      canvas.drawLine(Offset(numero, 0), Offset(numero, size.height), paint);
+    }
 
     // Definim els punts on es creuaran les línies horitzontals
-    final double firstHorizontal = size.height / 3;
-    final double secondHorizontal = 2 * size.height / 3;
-
+    final double firstHorizontal = size.height / 10;
+    final double secondHorizontal = 2 * size.height / 10;
+    final double trindHorizontal = 3 * size.height / 10;
+    final double fourHorizontal = 4 * size.height / 10;
+    final double fiveHorizontal = 5 * size.height / 10;
+    final double sixHorizontal = 6 * size.height / 10;
+    final double sevenHorizontal = 7 * size.height / 10;
+    final double eightHorizontal = 8 * size.height / 10;
+    final double nineHorizontal = 9 * size.height / 10;
+    List<double> listahorizontal = [
+      firstHorizontal,
+      secondHorizontal,
+      trindHorizontal,
+      fourHorizontal,
+      fiveHorizontal,
+      sixHorizontal,
+      sevenHorizontal,
+      eightHorizontal,
+      nineHorizontal,
+    ];
     // Dibuixem les línies horitzontals
-    canvas.drawLine(
-        Offset(0, firstHorizontal), Offset(size.width, firstHorizontal), paint);
-    canvas.drawLine(Offset(0, secondHorizontal),
-        Offset(size.width, secondHorizontal), paint);
+    for (int i = 0; i < listahorizontal.length; i++) {
+      double numero = listahorizontal[i];
+      canvas.drawLine(Offset(0, numero), Offset(size.width, numero), paint);
+    }
   }
 
   // Dibuixa la imatge centrada a una casella del taulell
@@ -101,8 +137,8 @@ class WidgetTresRatllaPainter extends CustomPainter {
     double cellWidth = size.width / 3;
     double cellHeight = size.height / 3;
 
-    for (int i = 0; i < 3; i++) {
-      for (int j = 0; j < 3; j++) {
+    for (int i = 0; i < 10; i++) {
+      for (int j = 0; j < 10; j++) {
         if (appData.board[i][j] == 'X') {
           // Dibuixar una X amb el color del jugador
           Color color = Colors.blue;
@@ -176,8 +212,8 @@ class WidgetTresRatllaPainter extends CustomPainter {
 
     // Centrem el text en el canvas
     final position = Offset(
-      (size.width - textPainter.width) / 2,
-      (size.height - textPainter.height) / 2,
+      (size.width - textPainter.width) / 8,
+      (size.height - textPainter.height) / 8,
     );
 
     // Dibuixar un rectangle semi-transparent que ocupi tot l'espai del canvas
